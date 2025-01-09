@@ -1,0 +1,30 @@
+[submodule "books/Natural_Language_Processing_with_Transformers"]
+	path = books/Natural_Language_Processing_with_Transformers
+	url = git@github.com:eddieai/Natural_Language_Processing_with_Transformers.git
+[submodule "books/fe4ml-zh"]
+	path = books/fe4ml-zh
+	url = git@github.com:eddieai/fe4ml-zh.git
+[submodule "books/hands-on-ml-2e-zh"]
+	path = books/hands-on-ml-2e-zh
+	url = git@github.com:eddieai/hands-on-ml-2e-zh.git
+[submodule "books/interpy-zh"]
+	path = books/interpy-zh
+	url = git@github.com:eddieai/interpy-zh.git
+[submodule "books/learn-nlp-with-transformers"]
+	path = books/learn-nlp-with-transformers
+	url = git@github.com:eddieai/learn-nlp-with-transformers.git
+[submodule "books/llm-cookbook"]
+	path = books/llm-cookbook
+	url = git@github.com:eddieai/llm-cookbook.git
+[submodule "books/nlp-pytorch-zh"]
+	path = books/nlp-pytorch-zh
+	url = git@github.com:eddieai/nlp-pytorch-zh.git
+[submodule "books/python3-cookbook"]
+	path = books/python3-cookbook
+	url = git@github.com:eddieai/python3-cookbook.git
+[submodule "books/python_advance"]
+	path = books/python_advance
+	url = git@github.com:eddieai/python_advance.git
+[submodule "books/think-py-2e-zh"]
+	path = books/think-py-2e-zh
+	url = git@github.com:eddieai/think-py-2e-zh.git
