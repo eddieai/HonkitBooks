@@ -95,7 +95,7 @@ def read_markdown_front_matter(md_file_path: Path) -> Optional[Page]:
     return Page(**attributes)
 
 
-def generate_summary(folder: Path) -> str:
+def generate_summary(dir: Path) -> str:
     """
     Generate markdown summary from a folder structure.
     
@@ -105,16 +105,16 @@ def generate_summary(folder: Path) -> str:
     Returns:
         Formatted markdown summary string
     """
-    def add_page_recursively(current_folder: Path) -> Page:
+    def add_page_recursively(current_dir: Path) -> Page:
         """Recursively build page hierarchy from folder structure."""
-        readme_path = current_folder / "README.md"
+        readme_path = current_dir / "README.md"
         readme = read_markdown_front_matter(readme_path)
         
         if not readme:
             return Page()
 
         # Process all items in current folder
-        for item in current_folder.glob("*"):
+        for item in current_dir.glob("*"):
             if item.is_dir():
                 readme.children.append(add_page_recursively(item))
             elif item.suffix == ".md" and item.stem != "README":
@@ -127,7 +127,7 @@ def generate_summary(folder: Path) -> str:
         return readme
 
     # Build the index tree
-    index = add_page_recursively(folder)
+    index = add_page_recursively(dir)
     
     # Generate summary markdown
     summary = ["# Summary"]
@@ -138,7 +138,7 @@ def generate_summary(folder: Path) -> str:
     for chapter in index.children:
         summary.append(f"\n### {chapter.title}")
         for page in chapter.children:
-            relative_path = page.path.relative_to(folder).as_posix()
+            relative_path = page.path.relative_to(dir).as_posix()
             summary.append(f"* [{page.title}]({relative_path})")
         summary.append("")
 

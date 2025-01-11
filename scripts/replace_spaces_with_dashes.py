@@ -28,21 +28,22 @@ from pathlib import Path
 import argparse
 
 
-def replace_spaces_with_dashes(root_dir: Path) -> None:
+def replace_spaces_with_dashes(dir: Path) -> None:
     """
     Replace spaces with dashes in markdown filenames within a directory tree.
     
     Args:
         root_dir: Root directory to process recursively
     """
-    for file in root_dir.glob("**/*.md"):
+    md_files = list(dir.rglob("*.md"))
+    for file in md_files:
         # Skip if filename doesn't contain spaces
         if " " not in file.name:
             continue
-            
+
         # Create new path with spaces replaced by dashes
         new_name = file.with_name(file.name.replace(" ", "-"))
-        
+
         # Rename the file
         file.rename(new_name)
         print(f"Renamed: {file} -> {new_name}")

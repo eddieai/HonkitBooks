@@ -20,7 +20,7 @@ def convert_notebooks(input_dir: Path, output_dir: Optional[Path] = None) -> Non
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Find all .ipynb files in input directory using pathlib's glob
-    notebooks = list(input_dir.glob("*.ipynb"))
+    notebooks = list(input_dir.rglob("*.ipynb"))
     
     # Early return if no notebooks found
     if not notebooks:
