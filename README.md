@@ -33,8 +33,6 @@
   yarn -v
   ```
 
-
-
 ## 1. Install HonKit locally inside book project
 
 Navigate to **book project**:
@@ -54,7 +52,6 @@ echo -e "node_modules\n.git" > .gitignore
 ```
 
 
-
 ## 2. Create ./docs folder
 
 a. create **./docs** folder:
@@ -71,8 +68,23 @@ c. make sure there is **README.md** and **SUMMARY.md**
 - **SUMMARY.md** is the table of content with links to all sub pages
 
 
-
 ## 3. Build Honkit
+
+### Build using bash script (Suggested)
+
+Directly run bash script:
+```bash
+scripts/build_honkit_books.sh --BOOK BOOK_NAME --GIT --COMMIT_MSG MESSAGE
+```
+
+For example:
+```bash
+scripts/build_honkit_books.sh --BOOK interpy-zh --GIT --COMMIT_MSG test
+```
+
+Or build manually by running the following commands.
+
+### Build maually
 
 From **./docs** folder:
 
@@ -88,7 +100,6 @@ b. move generated _book content to ./docs
 ```bash
 rm -rf ./gitbook && mv ./_book/* ./ && rm -rf ./_book
 ```
-
 
 
 ## 4. Create Github page
